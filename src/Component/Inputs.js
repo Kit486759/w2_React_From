@@ -6,9 +6,15 @@ class Inputs extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            name: "",
-            email: "",
-            company: ""
+            user: [
+                {
+                    id: "",
+                    name: "",
+                    email: "",
+                    companyPhrase: ""
+
+                }
+            ]
         }
     }
 
@@ -17,27 +23,13 @@ class Inputs extends React.Component {
         const value = e.target.value
 
         this.setState({
-            [name]: value
+            user: [{
+                [name]: value
+            }
+            ]
+
         })
     }
-
-    // changeHandlerName = (e) => {
-    //     this.setState({
-    //         name: e.target.value
-    //     })
-    // }
-
-    // changeHandlerEmail = (e) => {
-    //     this.setState({
-    //         email: e.target.value
-    //     })
-    // }
-
-    // changeHandlerCompany = (e) => {
-    //     this.setState({
-    //         company: e.target.value
-    //     })
-    // }
 
     submitInfo = (e) => {
         e.preventDefault()
@@ -50,13 +42,13 @@ class Inputs extends React.Component {
         <br>
          Email: ${this.state.email}  
           <br>
-          Company Phrase: ${this.state.company}
+          Company Phrase: ${this.state.companyPharse}
         </li>
         `)
     }
 
     componentDidUpdate() {
-        console.log(this.state.name, this.state.email, this.state.company)
+        console.log(this.state.user[0].name, this.state.user[0].email, this.state.user[0].companyPharse)
     }
 
     render() {
@@ -70,13 +62,13 @@ class Inputs extends React.Component {
 
                     <Input title="Name" name="name" id="inputName" placeholder="Input Name" value={this.state.name} onChange={this.changeHandler} />
                     <br />
-                   
+
                     <Input title="Email" name="email" id="inputEmail" placeholder="Input Email" value={this.state.email} onChange={this.changeHandler} />
                     <br />
 
-                    <Input title="Company Phrase" name="company" id="inputCompanyPhrase" placeholder="Input Company Phrase" value={this.state.company} onChange={this.changeHandler} />
+                    <Input title="Company Phrase" name="company" id="inputCompanyPhrase" placeholder="Input Company Phrase" value={this.state.companyPharse} onChange={this.changeHandler} />
 
-                   
+
                     <br />
                     <input type="submit" value="Submit" />
                 </div>

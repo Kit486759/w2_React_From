@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    
+
+    .userList {
+        margin: 20px;
+        .user {
+            padding:10px;
+            border: 1px solid black;
+        }
+    }
+
+    .inputBoxes {
+        margin: 20px;
+    }
+}

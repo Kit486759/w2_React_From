@@ -1,13 +1,13 @@
 
-import './App.css';
+import './Component/style.css';
 
 import Inputs from './Component/Inputs';
-import DisplayInfo from './Component/DisplayInfo';
+import UserList from './Component/UserList';
 
 function App() {
   return (
     <div className="container">
-      <DisplayInfo/>
+      <UserList/>
       <Inputs/>
     </div>
   );
